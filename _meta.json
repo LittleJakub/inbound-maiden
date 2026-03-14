@@ -1,0 +1,11 @@
+{
+  "name": "inbound-maiden",
+  "version": "1.0.0",
+  "description": "Scheduled cleanup of the OpenClaw media inbound folder — archives aged files, prunes old archives",
+  "requires": ["python3"],
+  "author": "hiVe / rOe",
+  "skill_path": "~/.openclaw/agents/main/workspace/skills/inbound-maiden/",
+  "config_path": "~/.openclaw/config/inbound-maiden/maiden.json",
+  "entry_point": "inbound_maiden.py",
+  "setup": "setup.py"
+}
