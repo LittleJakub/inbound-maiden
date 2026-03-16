@@ -10,10 +10,10 @@ import sys
 import shutil
 import argparse
 from datetime import datetime, timedelta
-
-CONFIG_PATH = os.path.expanduser("~/.openclaw/config/inbound-maiden/maiden.json")
-INBOUND_DIR = os.path.expanduser("~/.openclaw/media/inbound/")
-ARCHIVE_DIR = os.path.expanduser("~/.openclaw/media/archive/")
+OC          = os.environ.get("OPENCLAW_STATE_DIR", os.path.expanduser("~/.openclaw"))
+CONFIG_PATH = os.path.join(OC, "config/inbound-maiden/maiden.json")
+INBOUND_DIR = os.path.join(OC, "media/inbound/")
+ARCHIVE_DIR = os.path.join(OC, "media/archive/")
 
 
 # ── Config ────────────────────────────────────────────────────────────────────

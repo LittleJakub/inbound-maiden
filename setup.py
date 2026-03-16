@@ -8,10 +8,11 @@ import os
 import subprocess
 import sys
 
-CONFIG_DIR  = os.path.expanduser("~/.openclaw/config/inbound-maiden/")
+OC          = os.environ.get("OPENCLAW_STATE_DIR", os.path.expanduser("~/.openclaw"))
+CONFIG_DIR  = os.path.join(OC, "config/inbound-maiden/")
 CONFIG_PATH = os.path.join(CONFIG_DIR, "maiden.json")
-INBOUND_DIR = os.path.expanduser("~/.openclaw/media/inbound/")
-ARCHIVE_DIR = os.path.expanduser("~/.openclaw/media/archive/")
+INBOUND_DIR = os.path.join(OC, "media/inbound/")
+ARCHIVE_DIR = os.path.join(OC, "media/archive/")
 SKILL_DIR   = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -40,7 +41,7 @@ def ask_int(prompt: str, default: int, min_val: int = 1) -> int:
 
 def ask_cron(hour_morning: int, hour_evening: int) -> list[str]:
     script = os.path.join(SKILL_DIR, "inbound_maiden.py")
-    log    = os.path.expanduser("~/.openclaw/logs/inbound-maiden.log")
+    log    = os.path.join(OC, "logs/inbound-maiden.log")
     cmd    = f"python3 {script} run >> {log} 2>&1"
     return [
         f"0 {hour_morning} * * * {cmd}",
