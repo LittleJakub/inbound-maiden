@@ -17,7 +17,7 @@ If Jakub asks about the inbound folder state, use `status`. If he asks you to ru
 ## Script location
 
 ```
-~/.openclaw/agents/main/workspace/skills/inbound-maiden/inbound_maiden.py
+~/.openclaw/skills/inbound-maiden/inbound_maiden.py
 ```
 
 ---
